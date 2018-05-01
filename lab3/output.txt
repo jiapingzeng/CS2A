@@ -118,7 +118,35 @@ int main() {
     return 0;
 }
 
+------------------------
 ----------RUN1----------
+
+---------- List of Possible Ingredients ----------
+    Food #1: baked potato
+    Food #2: raw potato
+    Food #3: boiled potato
+    Food #4: canned potato
+    Food #5: fried potato
+--------------------------------------------------
+
+What are you calling this recipe? MiniPotatofest
+How many people does this recipe serve? 5
+How many grams of baked potato? 10
+How many grams of raw potato? 20
+How many grams of boiled potato? 30
+How many grams of canned potato? 40
+How many grams of fried potato? 50
+
+
+Nutrition facts per serving for MiniPotatofest:
+    Calories: 30.12Cal
+    Dietary Fiber: 0.622g
+    Starch: 4.73g
+    Fat: 0.498g
+    Protein: 0.576g
+
+------------------------
+----------RUN2----------
 
 ---------- List of Possible Ingredients ----------
     Food #1: baked potato
@@ -145,7 +173,34 @@ Nutrition facts per serving for Potatofest:
     Protein: 2.88g
 
 ------------------------
-----------RUN2----------
+----------RUN3----------
+
+---------- List of Possible Ingredients ----------
+    Food #1: baked potato
+    Food #2: raw potato
+    Food #3: boiled potato
+    Food #4: canned potato
+    Food #5: fried potato
+--------------------------------------------------
+
+What are you calling this recipe? BiggerPotatofest
+How many people does this recipe serve? 15
+How many grams of baked potato? 1500
+How many grams of raw potato? 1500
+How many grams of boiled potato? 1500
+How many grams of canned potato? 1500
+How many grams of fried potato? 1500
+
+
+Nutrition facts per serving for BiggerPotatofest:
+    Calories: 469Cal
+    Dietary Fiber: 10.5g
+    Starch: 79g
+    Fat: 5.2g
+    Protein: 10g
+
+------------------------
+----------RUN4----------
 
 ---------- List of Possible Ingredients ----------
     Food #1: baked potato
@@ -160,7 +215,7 @@ How many people does this recipe serve? 0
 Looks like no one is going to eat this food. Please try again with more people.
 
 ------------------------
-----------RUN3----------
+----------RUN5----------
 
 ---------- List of Possible Ingredients ----------
     Food #1: baked potato
@@ -175,7 +230,7 @@ How many people does this recipe serve? 100
 Too many people! Please try again.
 
 ------------------------
-----------RUN4----------
+----------RUN6----------
 
 ---------- List of Possible Ingredients ----------
     Food #1: baked potato
@@ -186,13 +241,13 @@ Too many people! Please try again.
 --------------------------------------------------
 
 What are you calling this recipe? FakeFood
-How many people does this recipe serve? 10
+How many people does this recipe serve? 3
 How many grams of baked potato? 100
 How many grams of raw potato? -100
 Not sure how to make negative food. Please try again.
 
 ------------------------
-----------RUN5----------
+----------RUN7----------
 
 ---------- List of Possible Ingredients ----------
     Food #1: baked potato
@@ -203,7 +258,7 @@ Not sure how to make negative food. Please try again.
 --------------------------------------------------
 
 What are you calling this recipe? TooMuchFood
-How many people does this recipe serve? 10
+How many people does this recipe serve? 6
 How many grams of baked potato? 100
 How many grams of raw potato? 100000
 Too much food! Please try again with less raw potato.
