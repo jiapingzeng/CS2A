@@ -23,12 +23,19 @@ const double FOOD_3_SOL_FIBER_P100G = 0;
 
 const string INDENT = "   ";
 
-void updateNutritions(string userInputStr, double foodCals, double foodSolFiber) {
+int updateNutritions(string userInputStr, double foodCals, double foodSolFiber) {
 	int userInputInt;
 	istringstream(userInputStr) >> userInputInt;
-	if (userInputInt < 0 || userInputInt > 1500) return;
+	if (userInputInt < 0) {
+		cout << "Not sure how to make negative food. Please try again.";
+		return 1;
+	} else if (userInputInt > 1500) {
+		cout << "Too much food! Please try again with less.";
+		return 1;
+	}
 	totalCals += userInputInt * (foodCals / 100);
 	totalSolFiber += userInputInt * (foodSolFiber / 100);
+	return 0;
 }
 
 int main() {
@@ -50,22 +57,23 @@ int main() {
 	getline(cin, recipeName);
 
 	// food #1
-	cout << "How many grams of " << FOOD_1_NAME << "? " << endl;
+	cout << "How many grams of " << FOOD_1_NAME << "? ";
 	getline(cin, userInputStr);
-	updateNutritions(userInputStr, FOOD_1_CALORIES_P100G, FOOD_1_SOL_FIBER_P100G);
+	if (updateNutritions(userInputStr, FOOD_1_CALORIES_P100G, FOOD_1_SOL_FIBER_P100G)) return 1;
 
 	// food #2
-	cout << "How many grams of " << FOOD_2_NAME << "? " << endl;
+	cout << "How many grams of " << FOOD_2_NAME << "? ";
 	getline(cin, userInputStr);
-	updateNutritions(userInputStr, FOOD_2_CALORIES_P100G, FOOD_2_SOL_FIBER_P100G);
+	if (updateNutritions(userInputStr, FOOD_2_CALORIES_P100G, FOOD_2_SOL_FIBER_P100G)) return 1;
 
 	// food #3
-	cout << "How many grams of " << FOOD_3_NAME << "? " << endl;
+	cout << "How many grams of " << FOOD_3_NAME << "? ";
 	getline(cin, userInputStr);
-	updateNutritions(userInputStr, FOOD_3_CALORIES_P100G, FOOD_3_SOL_FIBER_P100G);
+	if (updateNutritions(userInputStr, FOOD_3_CALORIES_P100G, FOOD_3_SOL_FIBER_P100G)) return 1;
 
 	// report results
-	cout << "Nutrition for " << recipeName << "----------" << endl;
+	cout << "----------" << "Nutrition for "
+		<< recipeName << "----------";
 	cout << INDENT << "Calories: " << totalCals << endl;
 	cout << INDENT << "Soluble Fiber: " << totalSolFiber << " grams\n";
 
