@@ -43,6 +43,7 @@ int getRecipeInfo() {
         return 1;
     } else if (numberofServings > 15) {
         cout << "Too many people! Please try again. " << endl;
+        return 1;
     }
     return 0;
 }
@@ -94,6 +95,7 @@ int main() {
     cout << "--------------------------------------------------" << endl;
 
     // get name and servings of recipe
+    cout << endl;
     if (getRecipeInfo()) return 1;
 
     // update total nutrition
@@ -114,4 +116,3 @@ int main() {
 
     return 0;
 }
-
