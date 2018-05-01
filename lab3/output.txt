@@ -30,6 +30,7 @@ Food::Food(string name, double calories, double dietFiber,
     this->protein = protein;
 }
 
+// get recipe name and number of servings
 int getRecipeInfo() {
     string userInputStr;
     cout << "What are you calling this recipe? ";
