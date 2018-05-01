@@ -23,6 +23,14 @@ const double FOOD_3_SOL_FIBER_P100G = 0;
 
 const string INDENT = "   ";
 
+void updateNutritions(string userInputStr, double foodCals, double foodSolFiber) {
+	int userInputInt;
+	istringstream(userInputStr) >> userInputInt;
+	if (userInputInt < 0 || userInputInt > 1500) return;
+	totalCals += userInputInt * (foodCals / 100);
+	totalSolFiber += userInputInt * (foodSolFiber / 100);
+}
+
 int main() {
 
 	string recipeName, userInputStr;
@@ -62,12 +70,4 @@ int main() {
 	cout << INDENT << "Soluble Fiber: " << totalSolFiber << " grams\n";
 
 	return 0;
-}
-
-void updateNutritions(string userInputStr, double foodCals, double foodSolFiber) {
-	int userInputInt;
-	istringstream(userInputStr) >> userInputInt;
-	if (userInputInt < 0 || userInputInt > 1500) return;
-	totalCals += userInputInt * (foodCals / 100);
-	totalSolFiber += userInputInt * (foodSolFiber / 100);
 }
