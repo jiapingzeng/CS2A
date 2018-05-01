@@ -5,6 +5,7 @@ using namespace std;
 
 // name of recipe
 string recipeName;
+int numberofServings;
 // total nutrition info of recipe
 double totalCalories, totalDietFiber, totalStarch, totalFat, totalProtein;
 
@@ -29,6 +30,23 @@ Food::Food(string name, double calories, double dietFiber,
     this->protein = protein;
 }
 
+int getRecipeInfo() {
+    string userInputStr;
+    cout << endl << "What are you calling this recipe? ";
+    getline(cin, recipeName);    
+    cout << endl << "How many people does this recipe serve? ";
+    getline(cin, userInputStr);
+    istringstream(userInputStr) >> numberofServings;
+    if (numberofServings < 1) {
+        cout << "Looks like no one is going to eat this food. " 
+            << "Please try again with more people." << endl;
+        return 1;
+    } else if (numberofServings > 15) {
+        cout << "Too many people! Please try again. " << endl;
+    }
+    return 0;
+}
+
 // asks user for and returns grams of food
 int getUserInput(Food food) {
     string userInputStr;
@@ -46,15 +64,15 @@ int updateNutritions(Food food, int grams) {
             << "Please try again." << endl;
         return 1;
     } else if (grams > 1500) {
-        cout << "Too much food! Please try again with less " 
+        cout << "Too much food! Please try again with less. " 
             << food.name << "." << endl;
         return 1;
     }
-    totalCalories += grams * (food.calories / 100);
-    totalDietFiber += grams * (food.dietFiber / 100);
-    totalStarch += grams * (food.starch / 100);
-    totalFat += grams * (food.fat / 100);
-    totalProtein += grams * (food.protein / 100);
+    totalCalories += grams * (food.calories / 100) / numberofServings;
+    totalDietFiber += grams * (food.dietFiber / 100) / numberofServings;
+    totalStarch += grams * (food.starch / 100) / numberofServings;
+    totalFat += grams * (food.fat / 100) / numberofServings;
+    totalProtein += grams * (food.protein / 100) / numberofServings;
     return 0;
 }
 
@@ -75,9 +93,8 @@ int main() {
     cout << INDENT << "Food #5: " << food5.name << endl;
     cout << "--------------------------------------------------" << endl;
 
-    // name of recipe
-    cout << endl << "What are you calling this recipe? ";
-    getline(cin, recipeName);
+    // get name and servings of recipe
+    if (getRecipeInfo()) return 1;
 
     // update total nutrition
     if (updateNutritions(food1, getUserInput(food1))) return 1;
@@ -88,7 +105,7 @@ int main() {
 
     // report results
     cout << endl << endl;
-    cout << "Nutrition facts for " << recipeName << ": " << endl;
+    cout << "Nutrition facts per serving for " << recipeName << ": " << endl;
     cout << INDENT << "Calories: " << totalCalories << "Cal" << endl;
     cout << INDENT << "Dietary Fiber: " << totalDietFiber << "g" << endl;
     cout << INDENT << "Starch: " << totalStarch << "g" << endl;
