@@ -32,9 +32,9 @@ Food::Food(string name, double calories, double dietFiber,
 
 int getRecipeInfo() {
     string userInputStr;
-    cout << endl << "What are you calling this recipe? ";
+    cout << "What are you calling this recipe? ";
     getline(cin, recipeName);    
-    cout << endl << "How many people does this recipe serve? ";
+    cout << "How many people does this recipe serve? ";
     getline(cin, userInputStr);
     istringstream(userInputStr) >> numberofServings;
     if (numberofServings < 1) {
@@ -64,7 +64,7 @@ int updateNutritions(Food food, int grams) {
             << "Please try again." << endl;
         return 1;
     } else if (grams > 1500) {
-        cout << "Too much food! Please try again with less. " 
+        cout << "Too much food! Please try again with less " 
             << food.name << "." << endl;
         return 1;
     }
@@ -114,3 +114,4 @@ int main() {
 
     return 0;
 }
+
