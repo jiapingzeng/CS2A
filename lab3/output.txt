@@ -107,9 +107,15 @@ int main() {
     Food #5: fried potato
 --------------------------------------------------
 
-What are you calling this recipe? How many grams of baked potato? How many grams of raw potato? How many grams of boiled potato? How many grams of canned potato? How many grams of fried potato? 
+What are you calling this recipe? Potatofest
+How many grams of baked potato? 100
+How many grams of raw potato? 200
+How many grams of boiled potato? 300
+How many grams of canned potato? 400
+How many grams of fried potato? 500
 
-Nutrition facts for Potatofest: 
+
+Nutrition facts for Potatofest:
     Calories: 1506Cal
     Dietary Fiber: 31.1g
     Starch: 236.5g
