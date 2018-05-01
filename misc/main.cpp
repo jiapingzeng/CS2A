@@ -1,19 +1,26 @@
 #include <iostream>
-#include <math.h>
 using namespace std;
 
 int main() {
-
-	cout.precision(18);
-
-	cout << "This is the value of pi from the math.h library:" << endl;
-	cout << M_PIl << endl;
-
-	cout << "Here is pi casted as a double:" << endl;
-	cout << (double) M_PIl << endl;
-
-	cout << "Here is pi casted as a float:" << endl;
-	cout << (float) M_PIl << endl;
-		
+	string userInput;
+	cout << "Hello! What is your major? ";
+	cin >> userInput;
+	cout << "Cool!";
+	// a single if statement is sufficient here because we only want
+	// to respond if this specific condition is met
+	if (userInput == "CS") {
+		cout << " Me too!";
+	}
+	cout << endl << "Please enter \"continue\" to continue: ";
+	cin >> userInput;
+	// an if-else statement works better here because we want to 
+	// display a message even if the user enters something wrong, and 
+	// since we don't know what the user is going to enter, the else 
+	// statement helps a lot
+	if (userInput == "continue") {
+		cout << "Performing secret action" << endl;
+	} else {
+		cout << "Wrong response. Exiting." << endl;
+	}
 	return 0;
 }

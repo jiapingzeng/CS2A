@@ -1,30 +1,22 @@
 #include <iostream>
-#include <math.h>
 using namespace std;
 
 int main() {
-    cout.precision(18);
-
-    cout << "This is the value of pi from the math.h library:" << endl;
-    cout << M_PIl << endl;
-
-    cout << "Here is pi casted as a double:" << endl;
-    cout << (double) M_PIl << endl;
-
-    cout << "Here is pi casted as a float:" << endl;
-    cout << (float) M_PIl << endl;
-        
+    string userInput;
+    cout << "Please enter \"continue\" to continue" << endl;
+    cin >> userInput;
+    if (userInput == "continue") {
+        cout << "Performing secret action" << endl;
+    } else {
+        cout << "Wrong response. Exiting." << endl;
+    }
     return 0;
 }
 
 ----------RUN----------
 
-This is the value of pi from the math.h library:
-3.14159265358979324
-Here is pi casted as a double:
-3.14159265358979312
-Here is pi casted as a float:
-3.14159274101257324
+Please enter "continue" to continue
+Performing secret action
 
 -----------------------
 
