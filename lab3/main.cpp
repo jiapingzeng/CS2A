@@ -3,11 +3,14 @@
 #include <sstream>
 using namespace std;
 
+// name of recipe
 string recipeName;
+// total nutrition info of recipe
 double totalCalories, totalDietFiber, totalStarch, totalFat, totalProtein;
 
 const string INDENT = "    ";
 
+// stores name and nutrition info of food
 class Food {
     public:
         string name;
@@ -16,7 +19,8 @@ class Food {
         Food(string, double, double, double, double, double);
 };
 
-Food::Food(string name, double calories, double dietFiber, double starch, double fat, double protein) {
+Food::Food(string name, double calories, double dietFiber, 
+            double starch, double fat, double protein) {
     this->name = name;
     this->calories = calories;
     this->dietFiber = dietFiber;
@@ -25,6 +29,7 @@ Food::Food(string name, double calories, double dietFiber, double starch, double
     this->protein = protein;
 }
 
+// asks user for and returns grams of food
 int getUserInput(Food food) {
     string userInputStr;
     int userInputInt;
@@ -34,12 +39,15 @@ int getUserInput(Food food) {
     return userInputInt;
 }
 
+// updates total nutrition info of recipe
 int updateNutritions(Food food, int grams) {
     if (grams < 0) {
-        cout << "Not sure how to make negative food. Please try again." << endl;
+        cout << "Not sure how to make negative food. " 
+            << "Please try again." << endl;
         return 1;
     } else if (grams > 1500) {
-        cout << "Too much food! Please try again with less " << food.name << "." << endl;
+        cout << "Too much food! Please try again with less " 
+            << food.name << "." << endl;
         return 1;
     }
     totalCalories += grams * (food.calories / 100);
@@ -51,8 +59,6 @@ int updateNutritions(Food food, int grams) {
 }
 
 int main() {
-    int userInput;
-
     // create food information
     Food food1 ("baked potato", 93.0, 2.2, 17.3, 0.1, 2.5);
     Food food2 ("raw potato", 77.0, 2.2, 15.4, 0.1, 2.0);
@@ -67,9 +73,10 @@ int main() {
     cout << INDENT << "Food #3: " << food3.name << endl;
     cout << INDENT << "Food #4: " << food4.name << endl;
     cout << INDENT << "Food #5: " << food5.name << endl;
+    cout << "--------------------------------------------------" << endl;
 
     // name of recipe
-    cout << "What are you calling this recipe? ";
+    cout << endl << "What are you calling this recipe? ";
     getline(cin, recipeName);
 
     // update total nutrition
@@ -81,12 +88,12 @@ int main() {
 
     // report results
     cout << endl << endl;
-    cout << "Nutrition for " << recipeName << endl;
-    cout << INDENT << "Calories: " << totalCalories << endl;
-    cout << INDENT << "Dietary Fiber: " << totalDietFiber << endl;
-    cout << INDENT << "Starch: " << totalStarch << endl;
-    cout << INDENT << "Fat: " << totalFat << endl;
-    cout << INDENT << "Protein: " << totalProtein << endl; 
+    cout << "Nutrition facts for " << recipeName << ": " << endl;
+    cout << INDENT << "Calories: " << totalCalories << "Cal" << endl;
+    cout << INDENT << "Dietary Fiber: " << totalDietFiber << "g" << endl;
+    cout << INDENT << "Starch: " << totalStarch << "g" << endl;
+    cout << INDENT << "Fat: " << totalFat << "g" << endl;
+    cout << INDENT << "Protein: " << totalProtein << "g" << endl; 
 
     return 0;
 }
