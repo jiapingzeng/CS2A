@@ -3,6 +3,8 @@
 #include <sstream>
 using namespace std;
 
+const int CREDITS_PER_REWARD = 7;
+
 int main() {
     string userInput;
     int stamps = 0;
@@ -14,7 +16,7 @@ int main() {
         cin >> userInput;
         cout << endl;
         if (userInput[0] == 'p' || userInput[0] == 'P') {
-            if (stamps >= 7) {
+            if (stamps >= CREDITS_PER_REWARD) {
                 // have enough stamps for free yogurt
                 cout << "You qualify for a free yogurt. "
                     << "Would you like to use your credits? "
@@ -23,9 +25,10 @@ int main() {
                 cout << endl;
                 if (userInput[0] == 'y' || userInput[0] == 'Y') {
                     // use stamps
-                    stamps -= 7;
-                    cout << "You just used 7 credits and have "
-                        << stamps << " left." << endl;
+                    stamps -= CREDITS_PER_REWARD;
+                    cout << "You just used " << CREDITS_PER_REWARD 
+                        << " credits and have " << stamps 
+                        << " left." << endl;
                     cout << "Enjoy your free yogurt." << endl
                         << endl;
                     continue;
@@ -44,7 +47,7 @@ int main() {
                     << stamps << " to use." << endl << endl;
             } else {
                 // invalid input
-                cout << "*** Invalid # yogurts ***" << endl;
+                cout << "*** Invalid # yogurts ***" << endl << endl;
             }
         } else if (userInput[0] == 's' || userInput[0] == 'S') {
             // exit program

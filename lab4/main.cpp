@@ -47,7 +47,7 @@ int main() {
 					<< stamps << " to use." << endl << endl;
 			} else {
 				// invalid input
-				cout << "*** Invalid # yogurts ***" << endl;
+				cout << "*** Invalid # yogurts ***" << endl << endl;
 			}
 		} else if (userInput[0] == 's' || userInput[0] == 'S') {
 			// exit program
