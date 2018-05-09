@@ -4,6 +4,7 @@
 using namespace std;
 
 const int CREDITS_PER_REWARD = 7;
+const int MAX_PER_TRANSACTION = 100;
 
 int main() {
 	string userInput;
@@ -39,7 +40,7 @@ int main() {
 			cout << endl;
 			int yogurts;
 			istringstream(userInput) >> yogurts;
-			if (yogurts > 0) {
+			if (yogurts > 0 && yogurts < MAX_PER_TRANSACTION) {
 				// buy yogurts
 				stamps += yogurts;
 				cout << "You just earned " << yogurts 
