@@ -60,3 +60,158 @@ int main() {
 
     return 0;
 }
+
+------------------------
+----------RUN1----------
+
+Menu:
+P (Process purchase)
+S (Shut down)
+
+Your choice: p
+
+How many yogurts would you like to buy? 5
+
+You just earned 5 stamps and have a total of 5 to use.
+
+Menu:
+P (Process purchase)
+S (Shut down)
+
+Your choice: purchase
+
+How many yogurts would you like to buy? -4
+
+*** Invalid # yogurts ***
+
+Menu:
+P (Process purchase)
+S (Shut down)
+
+Your choice: 6
+
+*** Use P or S, please ***
+
+Menu:
+P (Process purchase)
+S (Shut down)
+
+Your choice: p
+
+How many yogurts would you like to buy? 6
+
+You just earned 6 stamps and have a total of 11 to use.
+
+Menu:
+P (Process purchase)
+S (Shut down)
+
+Your choice: p
+
+You qualify for a free yogurt. Would you like to use your credits? (Y or N) n
+
+How many yogurts would you like to buy? 3
+
+You just earned 3 stamps and have a total of 14 to use.
+
+Menu:
+P (Process purchase)
+S (Shut down)
+
+Your choice: p
+
+You qualify for a free yogurt. Would you like to use your credits? (Y or N) y
+
+You just used 7 credits and have 7 left.
+Enjoy your free yogurt.
+
+Menu:
+P (Process purchase)
+S (Shut down)
+
+Your choice: s
+
+------------------------
+----------RUN2----------
+
+Menu:
+P (Process purchase)
+S (Shut down)
+
+Your choice: poo
+
+How many yogurts would you like to buy? 100
+
+You just earned 100 stamps and have a total of 100 to use.
+
+Menu:
+P (Process purchase)
+S (Shut down)
+
+Your choice: notp
+
+*** Use P or S, please ***
+
+Menu:
+P (Process purchase)
+S (Shut down)
+
+Your choice: pi
+
+You qualify for a free yogurt. Would you like to use your credits? (Y or N) yep
+
+You just used 7 credits and have 93 left.
+Enjoy your free yogurt.
+
+Menu:
+P (Process purchase)
+S (Shut down)
+
+Your choice: pb
+
+You qualify for a free yogurt. Would you like to use your credits? (Y or N) nah
+
+How many yogurts would you like to buy? 0
+
+*** Invalid # yogurts ***
+
+Menu:
+P (Process purchase)
+S (Shut down)
+
+Your choice: pu
+
+You qualify for a free yogurt. Would you like to use your credits? (Y or N) nope
+
+How many yogurts would you like to buy? 2
+
+You just earned 2 stamps and have a total of 95 to use.
+
+Menu:
+P (Process purchase)
+S (Shut down)
+
+Your choice: p
+
+You qualify for a free yogurt. Would you like to use your credits? (Y or N) y
+
+You just used 7 credits and have 88 left.
+Enjoy your free yogurt.
+
+Menu:
+P (Process purchase)
+S (Shut down)
+
+Your choice: pshutdown
+
+You qualify for a free yogurt. Would you like to use your credits? (Y or N) n
+
+How many yogurts would you like to buy? f
+
+*** Invalid # yogurts ***
+
+Menu:
+P (Process purchase)
+S (Shut down)
+
+Your choice: s
