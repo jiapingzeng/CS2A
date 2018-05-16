@@ -36,11 +36,11 @@ string getString() {
 
 string maskCharacter(string theString, char keyCharacter) {
     string newString = "";
-    for (char c : theString) {
-        if (c == keyCharacter) {
+    for (int i = 0; i < theString.length(); i++) {
+        if (theString[i] == keyCharacter) {
             newString += MASK;
         } else {
-            newString += c;
+            newString += theString[i];
         }
     }
     return newString;
@@ -48,9 +48,9 @@ string maskCharacter(string theString, char keyCharacter) {
 
 string removeCharacter(string theString, char keyCharacter) {
     string newString = "";
-    for (char c : theString) {
-        if (c != keyCharacter) {
-            newString += c;
+    for (int i = 0; i < theString.length(); i++) {
+        if (theString[i] != keyCharacter) {
+            newString += theString[i];
         }
     }
     return newString;
@@ -58,8 +58,8 @@ string removeCharacter(string theString, char keyCharacter) {
 
 int countKey(string theString, char keyCharacter) {
     int count = 0;
-    for (char c : theString) {
-        if (c == keyCharacter) {
+    for (int i = 0; i < theString.length(); i++) {
+        if (theString[i] == keyCharacter) {
             count++;
         }
     }
