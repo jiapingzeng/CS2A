@@ -88,3 +88,79 @@ int main() {
     
     return 0;
 }
+
+------------------------
+----------RUN1----------
+
+Please enter a SINGLE character to act as key: hello
+Invalid input. Please try again.
+Please enter a SINGLE character to act as key: hell
+Invalid input. Please try again.
+Please enter a SINGLE character to act as key: hel
+Invalid input. Please try again.
+Please enter a SINGLE character to act as key: he
+Invalid input. Please try again.
+Please enter a SINGLE character to act as key: h
+Please enter a phrase or sentence >= 4 and <= 500 characters: f
+Invalid input. Please include more characters.
+Please enter a phrase or sentence >= 4 and <= 500 characters: fsaddhrhq hqwfhwfhfwqhfqhorw hqwor
+
+String with key character, 'h' masked:
+fsadd*r*q *qwf*wf*fwq*fq*orw *qwor
+
+String with 'h' removed:
+fsaddrq qwfwffwqfqorw qwor
+
+# of occurences of key character, 'h': 8
+
+------------------------
+----------RUN2----------
+
+Please enter a SINGLE character to act as key: b
+Please enter a phrase or sentence >= 4 and <= 500 characters: bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
+
+String with key character, 'b' masked:
+******************************************************
+
+String with 'b' removed:
+
+
+# of occurences of key character, 'b': 54
+
+------------------------
+----------RUN3----------
+
+Please enter a SINGLE character to act as key: irjoq
+Invalid input. Please try again.
+Please enter a SINGLE character to act as key: jegoo
+Invalid input. Please try again.
+Please enter a SINGLE character to act as key: gqjg
+Invalid input. Please try again.
+Please enter a SINGLE character to act as key: sadfjo
+Invalid input. Please try again.
+Please enter a SINGLE character to act as key: fd
+Invalid input. Please try again.
+Please enter a SINGLE character to act as key: r
+Please enter a phrase or sentence >= 4 and <= 500 characters: jiorq qrwouhr  qrjo r rj orguqj qrwou rw  gqeuoqr  ro
+
+String with key character, 'r' masked:
+jio*q q*wouh*  q*jo * *j o*guqj q*wou *w  gqeuoq*  *o
+
+String with 'r' removed:
+jioq qwouh  qjo  j oguqj qwou w  gqeuoq  o
+
+# of occurences of key character, 'r': 11
+
+------------------------
+----------RUN4----------
+
+Please enter a SINGLE character to act as key: u
+Please enter a phrase or sentence >= 4 and <= 500 characters: abcdef3124 8t30j 05t8 g3580u 53gt gj 3010u gju5g0 g
+
+String with key character, 'u' masked:
+abcdef3124 8t30j 05t8 g3580* 53gt gj 3010* gj*5g0 g
+
+String with 'u' removed:
+abcdef3124 8t30j 05t8 g3580 53gt gj 3010 gj5g0 g
+
+# of occurences of key character, 'u': 3
