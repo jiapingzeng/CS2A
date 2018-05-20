@@ -6,15 +6,17 @@ using namespace std;
 int main() {
     string userInput;
     double userNumber;
+    cout << "Please enter a number: ";
     cin >> userInput;
     istringstream(userInput) >> userNumber;
-    cout << userNumber << endl;
+    cout << "Here is the square root of " << userNumber << ": ";
+    cout << sqrt(userNumber) << endl;
     return 0;
 }
 
 ----------RUN----------
 
-0
+Please enter a number: Here is the square root of 4: 2
 
 -----------------------
 
