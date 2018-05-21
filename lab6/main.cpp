@@ -4,8 +4,8 @@ using namespace std;
 class TripleString {
 	public:
 		string string1, string2, string3;
-		const int MAX_LEN = 1;
-		const int MIN_LEN = 50;
+		const int MAX_LEN = 50;
+		const int MIN_LEN = 1;
 		const string DEFAULT_STRING = "(undefined)";
 		TripleString();
 		TripleString(string str1, string str2, string str3);
@@ -18,13 +18,19 @@ class TripleString {
 		string toString();
 	private:
 		bool validString(string str);
-		bool setString(string str, string val);
+		bool setString(string &str, string val);
 };
 
 int main() {
-	TripleString ts;
-	ts.setString1("fdas");
-	cout << ts.getString1() << endl;
+	TripleString ts1, ts2, ts3;
+	TripleString ts4 ("1", "2", "3");
+	TripleString ts5 ("a", "b", "c");
+	ts1.setString1("fdas");
+	cout << ts1.toString() << endl;
+	cout << ts2.toString() << endl;
+	cout << ts3.toString() << endl;
+	cout << ts4.toString() << endl;
+	cout << ts5.toString() << endl;
 }
 
 TripleString::TripleString() {
@@ -63,7 +69,11 @@ bool TripleString::setString3(string str) {
 	return setString(string3, str);
 }
 
-bool TripleString::setString(string str, string val) {
+string TripleString::toString() {
+	return string1 + ", " + string2 + ", " + string3;
+}
+
+bool TripleString::setString(string &str, string val) {
 	if (validString(val)) {
 		str = val;
 		return true;
@@ -72,5 +82,5 @@ bool TripleString::setString(string str, string val) {
 }
 
 bool TripleString::validString(string str) {
-	return str.length() > MIN_LEN && str.length() < MAX_LEN;
+	return str.length() >= MIN_LEN && str.length() <= MAX_LEN;
 }
