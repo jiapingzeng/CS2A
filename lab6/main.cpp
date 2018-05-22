@@ -1,5 +1,8 @@
 #include <iostream>
+#include <string>
 using namespace std;
+
+const string LINE = "------------------------------------------";
 
 class TripleString {
 	public:
@@ -21,16 +24,53 @@ class TripleString {
 		bool setString(string &str, string val);
 };
 
-int main() {
-	TripleString ts1, ts2, ts3;
-	TripleString ts4 ("1", "2", "3");
-	TripleString ts5 ("a", "b", "c");
-	ts1.setString1("fdas");
+void printTripleStrings(TripleString ts1, TripleString ts2, TripleString ts3,
+			TripleString ts4, TripleString ts5) {
+	cout << LINE << endl;
 	cout << ts1.toString() << endl;
 	cout << ts2.toString() << endl;
 	cout << ts3.toString() << endl;
 	cout << ts4.toString() << endl;
 	cout << ts5.toString() << endl;
+	cout << LINE << endl << endl;
+}
+
+int main() {
+	TripleString ts1, ts2, ts3;
+	TripleString ts4 ("a", "b", "c");
+	TripleString ts5 ("1", "2", "3");
+
+	cout << "TripleStrings after instantiation: " << endl;
+	printTripleStrings(ts1, ts2, ts3, ts4, ts5);
+
+	ts1.setString3("hi");
+	ts2.setString2("..........");
+	ts3.setString1("re");
+	ts4.setString2("    ");
+	ts5.setString3("fr");
+
+	cout << "TripleStrings after changes: " << endl;
+	printTripleStrings(ts1, ts2, ts3, ts4, ts5);
+
+	cout << "Accessor Tests: " << endl << LINE << endl;
+	cout << "String 3 of the 1st TripleString: " 
+		<< ts1.getString3() << endl;
+	cout << "String 1 of the 1st TripleString: " 
+		<< ts3.getString1() << endl;
+	cout << LINE << endl << endl;
+
+	cout << "Mutator Tests: " << endl << LINE << endl;
+	cout << "The 2nd TripleString before testing mutators: "
+		<< ts2.toString() << endl;
+	cout << "Attempting to set String 1 of the 2nd " 
+		<< "TripleString to \"\" (empty string)" << endl;
+	ts2.setString1("");
+	cout << "Attempting to set String 3 of the 2nd "
+		<< "TripleString to \"changed\"" << endl;
+	ts2.setString3("changed");
+	cout << "The 2nd TripleString after the attempts: "
+		<< ts2.toString() << endl;
+	cout << LINE << endl << endl;
 }
 
 TripleString::TripleString() {
