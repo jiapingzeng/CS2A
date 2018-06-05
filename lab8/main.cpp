@@ -4,19 +4,20 @@
 using namespace std;
 
 class DateProfile {
-    private:
-        char gender;
-        char searchGender;
-        int romance;
-        int finance;
-        string name;
     public:
+        // range limits
         static const int MIN_ROMANCE = 1;
         static const int MAX_ROMANCE = 10;
         static const int MIN_FINANCE = 1;
         static const int MAX_FINANCE = 10;
         static const int MIN_NAME_LEN = 5;
         static const int MAX_NAME_LEN = 30;
+        // default values
+        static const char DEFAULT_GEND = 'M';
+        static const char DEFAULT_SEARCH_GEND = 'F';
+        static const int DEFAULT_ROMANCE = 5;
+        static const int DEFAULT_FINANCE = 5;
+        static const string DEFAULT_NAME = "Anonymous";
         DateProfile();
         DateProfile(char gender, char searchGender, int romance,
                     int finance, string name);
@@ -30,6 +31,13 @@ class DateProfile {
         void setRomance(int romance);
         void setFinance(int finance);
         void setName(string name);
+        
+    private:
+        char gender;
+        char searchGender;
+        int romance;
+        int finance;
+        string name;
 };
 
 DateProfile::DateProfile() {
