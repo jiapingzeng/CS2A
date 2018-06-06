@@ -31,6 +31,9 @@ class DateProfile {
         void setFinance(int finance);
         void setName(string name);
         // other functions
+        void setAll(char gender, char searchGender, int romance,
+                    int finance, string name);
+        void setDefaults();
         double fitValue(DateProfile partner);
         double determineGenderFit(DateProfile partner);
         double determineRomanceFit(DateProfile partner);
@@ -42,13 +45,73 @@ class DateProfile {
         string name;
 };
 
+const string LINE = "------------------------------------------";
+
+void printFit(DateProfile dp1, DateProfile dp2) {
+    cout << "Fit between " << dp1.getName() << " and " << dp2.getName()
+        << ": " << dp1.fitValue(dp2) << endl;
+}
+
 int main() {
-    DateProfile dp1;
-    DateProfile dp2 ('m', 'f', 10, 10, "Hi");
-    cout << "dp1 name: " << dp1.getName() << endl;
-    cout << "dp1 finance: " << dp1.getFinance() << endl;
-    cout << "dp2 name: " << dp2.getName() << endl;
-    cout << "dp2 finance: " << dp2.getFinance() << endl;
+    cout.precision(3);
+    DateProfile dp1 ('m', 'f', 9, 3, "dude 1");
+    DateProfile dp2 ('m', 'f', 7, 2, "dude 2");
+    DateProfile dp3 ('f', 'm', 1, 8, "gal 1");
+    DateProfile dp4 ('f', 'f', 4, 4, "gal 2");
+
+    // testing accessors and mutators
+    cout << LINE << endl;
+    cout << "Testing accessors and mutators" << endl;
+    cout << LINE << endl;
+    cout << "Finance of " << dp2.getName() << " is: "
+            << dp2.getFinance() << endl;
+    cout << "Romance of " << dp3.getName() << " is: "
+            << dp3.getRomance() << endl;
+    cout << "Modifying values..." << endl;
+    dp2.setName("?");
+    dp2.setFinance(10);
+    dp3.setRomance(6);
+    cout << "Finance of " << dp2.getName() << " is now: "
+            << dp2.getFinance() << endl;
+    cout << "Romance of " << dp3.getName() << " is now: "
+            << dp3.getRomance() << endl;
+    cout << LINE << endl;
+    // undo name change
+    dp2.setName("dude 2");
+
+    // matching
+    cout << LINE << endl;
+    cout << "Fit values for profile 1: " << endl;
+    cout << LINE << endl;
+    printFit(dp1, dp1);
+    printFit(dp1, dp2);
+    printFit(dp1, dp3);
+    printFit(dp1, dp4);
+
+    cout << LINE << endl;
+    cout << "Fit values for profile 2: " << endl;
+    cout << LINE << endl;
+    printFit(dp2, dp1);
+    printFit(dp2, dp2);
+    printFit(dp2, dp3);
+    printFit(dp2, dp4);
+
+    cout << LINE << endl;
+    cout << "Fit values for profile 3: " << endl;
+    cout << LINE << endl;
+    printFit(dp3, dp1);
+    printFit(dp3, dp2);
+    printFit(dp3, dp3);
+    printFit(dp3, dp4);
+
+    cout << LINE << endl;
+    cout << "Fit values for profile 4: " << endl;
+    cout << LINE << endl;
+    printFit(dp3, dp1);
+    printFit(dp3, dp2);
+    printFit(dp3, dp3);
+    printFit(dp3, dp4);
+
     return 0;
 }
 
@@ -66,17 +129,12 @@ const int DateProfile::DEFAULT_FINANCE = 5;
 const string DateProfile::DEFAULT_NAME = "Anonymous";
 
 DateProfile::DateProfile() {
-    DateProfile(DEFAULT_GENDER, DEFAULT_SEARCH_GENDER, DEFAULT_ROMANCE,
-                DEFAULT_FINANCE, DEFAULT_NAME);
+    setDefaults();
 }
 
 DateProfile::DateProfile(char gender, char searchGender, int romance, 
                             int finance, string name) {
-    setGender(gender);
-    setSearchGender(searchGender);
-    setRomance(romance);
-    setFinance(finance);
-    setName(name);
+    setAll(gender, searchGender, romance, finance, name);
 }
 
 char DateProfile::getGender() {
@@ -96,7 +154,6 @@ int DateProfile::getFinance() {
 }
 
 string DateProfile::getName() {
-    cout << "name: " << name << endl;
     return name;
 }
 
@@ -105,6 +162,7 @@ void DateProfile::setGender(char gender) {
     if (gender == 'M' || gender == 'F') {
         this->gender = gender;
     } else {
+        cout << "Invalid gender \"" << gender << "\"" << endl;
         this->gender = DEFAULT_GENDER;
     }
 }
@@ -114,6 +172,7 @@ void DateProfile::setSearchGender(char searchGender) {
     if (searchGender == 'M' || searchGender == 'F') {
         this->searchGender = searchGender;
     } else {
+        cout << "Invalid search gender \"" << searchGender << "\"" << endl;
         this->searchGender = DEFAULT_SEARCH_GENDER;
     }
 }
@@ -122,6 +181,7 @@ void DateProfile::setRomance(int romance) {
     if (romance >= MIN_ROMANCE && romance <= MAX_ROMANCE) {
         this->romance = romance;
     } else {
+        cout << "Invalid romance \"" << romance << "\"" << endl;
         this->romance = DEFAULT_ROMANCE;
     }
 }
@@ -130,6 +190,7 @@ void DateProfile::setFinance(int finance) {
     if (finance >= MIN_FINANCE && finance <= MAX_FINANCE) {
         this->finance = finance;
     } else {
+        cout << "Invalid finance \"" << finance << "\"" << endl;
         this->finance = DEFAULT_FINANCE;
     }
 }
@@ -145,24 +206,42 @@ void DateProfile::setName(string name) {
     }
 }
 
+void DateProfile::setAll(char gender, char searchGender, int romance,
+                            int finance, string name) {
+    setGender(gender);
+    setSearchGender(searchGender);
+    setRomance(romance);
+    setFinance(finance);
+    setName(name);
+}
+
+void DateProfile::setDefaults() {
+    setAll(DEFAULT_GENDER, DEFAULT_SEARCH_GENDER, DEFAULT_ROMANCE,
+            DEFAULT_FINANCE, DEFAULT_NAME);
+}
+
 double DateProfile::fitValue(DateProfile partner) {
     if (determineGenderFit(partner)) {
         return (determineRomanceFit(partner) 
-                + determineFinanceFit(partner)) / 2;
+                + determineFinanceFit(partner)) / 2.0;
     } else {
         return 0;
     }
 }
 
 double DateProfile::determineGenderFit(DateProfile partner) {
+    // return true (1) if gender matches partner's search gender
+    // and vice versa, false (0) if match fails
     return this->gender == partner.getSearchGender() && 
             this->searchGender == partner.getGender();
 }
 
 double DateProfile::determineRomanceFit(DateProfile partner) {
-    return 1/abs(this->romance - partner.getRomance());
+    // linear scale
+    return 1 - abs(this->romance - partner.getRomance()) / 10.0;
 }
 
 double DateProfile::determineFinanceFit(DateProfile partner) {
-    return 1/abs(this->finance - partner.getFinance());
+    // linear scale
+    return 1 - abs(this->finance - partner.getFinance()) / 10.0;
 }
