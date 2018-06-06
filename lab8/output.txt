@@ -166,3 +166,15 @@ double DateProfile::determineRomanceFit(DateProfile partner) {
 double DateProfile::determineFinanceFit(DateProfile partner) {
     return 1/abs(this->finance - partner.getFinance());
 }
+----------RUN----------
+
+Invalid name "Hi". Please make sure your name is between 5 and 30 characters.
+dp1 name: name: 
+
+dp1 finance: 65535
+dp2 name: name: Anonymous
+Anonymous
+dp2 finance: 10
+
+-----------------------
+
