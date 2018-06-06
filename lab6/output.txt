@@ -127,38 +127,6 @@ bool TripleString::validString(string str) {
 
 ----------RUN----------
 
-TripleStrings after instantiation: 
-------------------------------------------
-(undefined), (undefined), (undefined)
-(undefined), (undefined), (undefined)
-(undefined), (undefined), (undefined)
-a, b, c
-1, 2, 3
-------------------------------------------
-
-TripleStrings after changes: 
-------------------------------------------
-(undefined), (undefined), hi
-(undefined), .........., (undefined)
-re, (undefined), (undefined)
-a,     , c
-1, 2, fr
-------------------------------------------
-
-Accessor Tests: 
-------------------------------------------
-String 3 of the 1st TripleString: hi
-String 1 of the 1st TripleString: re
-------------------------------------------
-
-Mutator Tests: 
-------------------------------------------
-The 2nd TripleString before testing mutators: (undefined), .........., (undefined)
-Attempting to set String 1 of the 2nd TripleString to "" (empty string)
-Attempting to set String 3 of the 2nd TripleString to "changed"
-The 2nd TripleString after the attempts: (undefined), .........., changed
-------------------------------------------
-
 
 -----------------------
 
