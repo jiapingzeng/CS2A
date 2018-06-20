@@ -301,3 +301,89 @@ void StudentArrayUtilities::mySwap(Student &a, Student &b)
 }
 
 // end of StudentArrayUtilities method definitions  --------------
+
+----------RUN----------
+
+Before: 
+  smith, fred points: 95
+  bauer, jack points: 123
+  jacobs, carrie points: 195
+  renquist, abe points: 148
+  zz-error, trevor points: 108
+  perry, fred points: 225
+  loceff, fred points: 44
+  stollings, pamela points: 452
+  charters, rodney points: 295
+  cassar, john points: 321
+  d2, r2 points: 242
+  bye, hi points: 289
+  chicken, fried points: 724
+  srfg31, rrrr points: 222
+  ctgb, rfrw points: 224
+  cyhjear, jyw points: 241
+
+By last name: 
+  bauer, jack points: 123
+  bye, hi points: 289
+  cassar, john points: 321
+  charters, rodney points: 295
+  chicken, fried points: 724
+  ctgb, rfrw points: 224
+  cyhjear, jyw points: 241
+  d2, r2 points: 242
+  jacobs, carrie points: 195
+  loceff, fred points: 44
+  perry, fred points: 225
+  renquist, abe points: 148
+  smith, fred points: 95
+  srfg31, rrrr points: 222
+  stollings, pamela points: 452
+  zz-error, trevor points: 108
+
+By first name: 
+  renquist, abe points: 148
+  jacobs, carrie points: 195
+  loceff, fred points: 44
+  perry, fred points: 225
+  smith, fred points: 95
+  chicken, fried points: 724
+  bye, hi points: 289
+  bauer, jack points: 123
+  cassar, john points: 321
+  cyhjear, jyw points: 241
+  stollings, pamela points: 452
+  d2, r2 points: 242
+  ctgb, rfrw points: 224
+  charters, rodney points: 295
+  srfg31, rrrr points: 222
+  zz-error, trevor points: 108
+
+By total score: 
+  loceff, fred points: 44
+  smith, fred points: 95
+  zz-error, trevor points: 108
+  bauer, jack points: 123
+  renquist, abe points: 148
+  jacobs, carrie points: 195
+  srfg31, rrrr points: 222
+  ctgb, rfrw points: 224
+  perry, fred points: 225
+  cyhjear, jyw points: 241
+  d2, r2 points: 242
+  bye, hi points: 289
+  charters, rodney points: 295
+  cassar, john points: 321
+  stollings, pamela points: 452
+  chicken, fried points: 724
+
+
+Median of array of size 16 is: 224.5
+
+sortKey after getting median (should be 88): 88
+
+Median of array of size 15 is: 224
+
+Median of array of size 1 is: 724
+
+-----------------------
+
